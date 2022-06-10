@@ -6,7 +6,7 @@
 /*   By: vangirov <vangirov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 18:58:47 by vangirov          #+#    #+#             */
-/*   Updated: 2022/06/10 12:05:06 by vangirov         ###   ########.fr       */
+/*   Updated: 2022/06/10 12:09:28 by vangirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_printf(const char *fmt, ...)
 			fmt++;
 		}
 		else
-			len += write(1, &(*fmt++), 1);
+			len += write(fd, &(*fmt++), 1);
 	}
 	va_end(ap);
 	return (len);
