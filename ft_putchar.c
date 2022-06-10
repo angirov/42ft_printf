@@ -3,28 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vangirov <vangirov@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: vangirov <vangirov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 18:52:55 by vangirov          #+#    #+#             */
-/*   Updated: 2022/02/03 21:15:24 by vangirov         ###   ########.fr       */
+/*   Updated: 2022/06/10 11:59:26 by vangirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(char c)
+int	ft_putchar(int fd, char c)
 {
-	return (write(1, &c, 1));
+	return (write(fd, &c, 1));
 }
 
-int	ft_putstr(char *str)
+int	ft_putstr(int fd, char *str)
 {
 	int	len;
 
 	if (!str)
-		return (ft_putstr("(null)"));
+		return (ft_putstr(fd, "(null)"));
 	len = 0;
 	while (*str)
-		len += ft_putchar(*str++);
+		len += ft_putchar(fd, *str++);
 	return (len);
 }
